@@ -1,0 +1,10 @@
+from docx import Document
+doc = Document()
+doc.add_heading('가장 큰 제목 (아래에 밑줄)', level=0)
+doc.add_heading('제목 크기, H1', level=1)
+doc.add_heading('제목 크기, H2', level=2)
+doc.add_heading('제목 크기, H3', level=3)
+doc.add_heading('제목 크기, H4', level=4)
+doc.add_heading('제목 크기, H5', level=5)
+doc.add_heading('제목 크기, H6', level=6)
+doc.save('test1.docx')
