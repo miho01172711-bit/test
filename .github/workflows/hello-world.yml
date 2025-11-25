@@ -5,7 +5,7 @@ on: # Events
 
 jobs: # Jobs
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps: # Step
       - uses: actions/checkout@v3 # Action
       - name: Hello World 
@@ -13,3 +13,5 @@ jobs: # Jobs
           echo "Hello World! Github Actions "
           echo ENV: ${{ vars.MESSAGE }}
           echo SECRET: ${{ secrets.APP_SECRET }}  
+
+          
