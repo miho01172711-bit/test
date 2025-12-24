@@ -1,0 +1,15 @@
+# 가상환경에서 실행 권장
+pip install pytest pytest-cov coverage ruff openpyxl python-docx
+
+# 테스트 + 커버리지
+pytest -q --maxfail=1 --junitxml=pytest.xml --cov=. --cov-report=xml:coverage.xml
+
+# 린트 결과 JSON
+ruff check . --output-format json > ruff.json || true
+
+#파일을 csv 형태로 변환
+python quality_to_csv.py --junit pytest.xml --coverage coverage.xml --ruff ruff.json --outdir out_csv
+
+#csv 파일을 excel과 word로 생성
+python csv_to_excel out_csv
+python csv_to_word out_csv

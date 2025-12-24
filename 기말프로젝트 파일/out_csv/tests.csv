@@ -1,0 +1,9 @@
+classname,name,status,time_sec
+input_test,test_weighted_sum_basic,ok,0.001
+input_test,test_moving_average_basic,ok,0.001
+input_test,test_moving_average_window_edge,ok,0.001
+input_test,test_moving_average_invalid,ok,0.001
+input_test,test_revenue_and_grade,ok,0.001
+input_test,test_normalize_whitespace,ok,0.001
+input_test,test_is_palindrome,ok,0.001
+input_test,test_summarize_and_email,ok,0.001

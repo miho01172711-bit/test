@@ -1,0 +1,8 @@
+metric,value
+tests_total,8
+tests_passed,8
+tests_failed,0
+tests_skipped,0
+tests_time_sec,0.225
+coverage_percent,26.32
+lint_issues,15

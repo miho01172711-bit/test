@@ -1,0 +1,16 @@
+filename,line,col,code,message
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,3,1,E401,Multiple imports on one line
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,10,44,E702,Multiple statements on one line (semicolon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,10,60,E702,Multiple statements on one line (semicolon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,12,40,E702,Multiple statements on one line (semicolon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,13,42,E702,Multiple statements on one line (semicolon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,17,46,E701,Multiple statements on one line (colon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,18,46,E701,Multiple statements on one line (colon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,19,48,E701,Multiple statements on one line (colon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,40,53,E701,Multiple statements on one line (colon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,48,17,E702,Multiple statements on one line (semicolon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,54,40,E702,Multiple statements on one line (semicolon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,76,24,E702,Multiple statements on one line (semicolon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,82,24,E702,Multiple statements on one line (semicolon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,88,24,E702,Multiple statements on one line (semicolon)
+C:\Users\hson\OneDrive\문서\py311\word\quality_to_csv.py,95,24,E702,Multiple statements on one line (semicolon)

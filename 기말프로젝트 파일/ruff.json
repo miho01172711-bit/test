@@ -1,0 +1,273 @@
+[
+  {
+    "cell": null,
+    "code": "E401",
+    "end_location": {
+      "column": 56,
+      "row": 3
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "import argparse\r\nimport json\r\nimport csv\r\nimport xml.etree.ElementTree as ET",
+          "end_location": {
+            "column": 56,
+            "row": 3
+          },
+          "location": {
+            "column": 1,
+            "row": 3
+          }
+        }
+      ],
+      "message": "Split imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 3
+    },
+    "message": "Multiple imports on one line",
+    "noqa_row": 3,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-imports-on-one-line"
+  },
+  {
+    "cell": null,
+    "code": "E702",
+    "end_location": {
+      "column": 45,
+      "row": 10
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 44,
+      "row": 10
+    },
+    "message": "Multiple statements on one line (semicolon)",
+    "noqa_row": 10,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+  },
+  {
+    "cell": null,
+    "code": "E702",
+    "end_location": {
+      "column": 61,
+      "row": 10
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 60,
+      "row": 10
+    },
+    "message": "Multiple statements on one line (semicolon)",
+    "noqa_row": 10,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+  },
+  {
+    "cell": null,
+    "code": "E702",
+    "end_location": {
+      "column": 41,
+      "row": 12
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 40,
+      "row": 12
+    },
+    "message": "Multiple statements on one line (semicolon)",
+    "noqa_row": 12,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+  },
+  {
+    "cell": null,
+    "code": "E702",
+    "end_location": {
+      "column": 43,
+      "row": 13
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 42,
+      "row": 13
+    },
+    "message": "Multiple statements on one line (semicolon)",
+    "noqa_row": 13,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+  },
+  {
+    "cell": null,
+    "code": "E701",
+    "end_location": {
+      "column": 47,
+      "row": 17
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 46,
+      "row": 17
+    },
+    "message": "Multiple statements on one line (colon)",
+    "noqa_row": 17,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-colon"
+  },
+  {
+    "cell": null,
+    "code": "E701",
+    "end_location": {
+      "column": 47,
+      "row": 18
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 46,
+      "row": 18
+    },
+    "message": "Multiple statements on one line (colon)",
+    "noqa_row": 18,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-colon"
+  },
+  {
+    "cell": null,
+    "code": "E701",
+    "end_location": {
+      "column": 49,
+      "row": 19
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 48,
+      "row": 19
+    },
+    "message": "Multiple statements on one line (colon)",
+    "noqa_row": 19,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-colon"
+  },
+  {
+    "cell": null,
+    "code": "E701",
+    "end_location": {
+      "column": 54,
+      "row": 40
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 53,
+      "row": 40
+    },
+    "message": "Multiple statements on one line (colon)",
+    "noqa_row": 40,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-colon"
+  },
+  {
+    "cell": null,
+    "code": "E702",
+    "end_location": {
+      "column": 18,
+      "row": 48
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 17,
+      "row": 48
+    },
+    "message": "Multiple statements on one line (semicolon)",
+    "noqa_row": 48,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+  },
+  {
+    "cell": null,
+    "code": "E702",
+    "end_location": {
+      "column": 41,
+      "row": 54
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 40,
+      "row": 54
+    },
+    "message": "Multiple statements on one line (semicolon)",
+    "noqa_row": 54,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+  },
+  {
+    "cell": null,
+    "code": "E702",
+    "end_location": {
+      "column": 25,
+      "row": 76
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 24,
+      "row": 76
+    },
+    "message": "Multiple statements on one line (semicolon)",
+    "noqa_row": 76,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+  },
+  {
+    "cell": null,
+    "code": "E702",
+    "end_location": {
+      "column": 25,
+      "row": 82
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 24,
+      "row": 82
+    },
+    "message": "Multiple statements on one line (semicolon)",
+    "noqa_row": 82,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+  },
+  {
+    "cell": null,
+    "code": "E702",
+    "end_location": {
+      "column": 25,
+      "row": 88
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 24,
+      "row": 88
+    },
+    "message": "Multiple statements on one line (semicolon)",
+    "noqa_row": 88,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+  },
+  {
+    "cell": null,
+    "code": "E702",
+    "end_location": {
+      "column": 25,
+      "row": 95
+    },
+    "filename": "C:\\Users\\hson\\OneDrive\\문서\\py311\\word\\quality_to_csv.py",
+    "fix": null,
+    "location": {
+      "column": 24,
+      "row": 95
+    },
+    "message": "Multiple statements on one line (semicolon)",
+    "noqa_row": 95,
+    "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+  }
+]

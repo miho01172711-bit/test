@@ -1,17 +1,15 @@
-name: Hello World # 워크플로우
-on: # Events 
+name: Hello World 
+on: 
   workflow_dispatch:
   push:
 
-jobs: # Jobs
+jobs: 
   build:
     runs-on: self-hosted
-    steps: # Step
-      - uses: actions/checkout@v3 # Action
+    steps: 
+      - uses: actions/checkout@v3 
       - name: Hello World 
         run: |
           echo "Hello World! Github Actions "
           echo ENV: ${{ vars.MESSAGE }}
           echo SECRET: ${{ secrets.APP_SECRET }}  
-
-          
