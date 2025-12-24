@@ -9,6 +9,7 @@ jobs:
     steps: 
       - uses: actions/checkout@v3 
       - name: Hello World 
+        shell: cmd
         run: |
           echo "Hello World! Github Actions "
           echo ENV: ${{ vars.MESSAGE }}
