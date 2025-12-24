@@ -5,8 +5,8 @@ on:
 
 jobs: 
   build: 
-    #runs-on: ubuntu-latest 
-    runs-on: self-hosted 
+    runs-on: ubuntu-latest 
+    #runs-on: self-hosted 
     steps:  
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
@@ -17,3 +17,12 @@ jobs:
       - run: pytest -q --maxfail=1 --junitxml=pytest.xml --cov=. --cov-report=xml:coverage.xml
       - run: ruff check . --output-format json > ruff.json || true
       - run: python quality_to_csv.py --junit pytest.xml --coverage coverage.xml --ruff ruff.json --outdir out_csv
+      - name: Upload result files
+        uses: actions/upload-artifact@v4
+        with:
+          name: ubuntu-results
+          path: |
+            pytest.xml
+            coverage.xml
+            ruff.json
+            out/
