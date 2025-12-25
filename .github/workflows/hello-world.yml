@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: '3.9'
           cache: 'pip'
-      - run: pip install pytest pytest-cov coverage ruff openpyxl python-docx pandas
+      - run: pip install pytest pytest-cov coverage ruff openpyxl python-docx  pandas
       - run: pytest -q --maxfail=1 --junitxml=pytest.xml --cov=. --cov-report=xml:coverage.xml
       - run: ruff check . --output-format json > ruff.json || true
       - run: python quality_to_csv.py --junit pytest.xml --coverage coverage.xml --ruff ruff.json --outdir out_csv
