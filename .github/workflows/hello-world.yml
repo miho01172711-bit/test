@@ -17,7 +17,90 @@ jobs:
       - run: pytest -q --maxfail=1 --junitxml=pytest.xml --cov=. --cov-report=xml:coverage.xml
       - run: ruff check . --output-format json > ruff.json || true
       - run: python quality_to_csv.py --junit pytest.xml --coverage coverage.xml --ruff ruff.json --outdir out_csv
-      - run: python quality_report.py
+      
+      - name: Create quality_report.py
+        run: |
+          cat << 'EOF' > quality_report.py
+          import os
+          import pandas as pd
+          from openpyxl import Workbook
+          from docx import Document
+
+          INPUT_DIR = "out_csv"
+          OUTPUT_DIR = "out"
+
+          os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+          summary_df = pd.read_csv(os.path.join(INPUT_DIR, "summary.csv"))
+          tests_df = pd.read_csv(os.path.join(INPUT_DIR, "tests.csv"))
+          coverage_df = pd.read_csv(os.path.join(INPUT_DIR, "coverage_files.csv"))
+          lint_top5_df = pd.read_csv(os.path.join(INPUT_DIR, "lint_top5.csv"))
+
+          wb = Workbook()
+          ws = wb.active
+          ws.title = "Summary"
+          ws.append(["Metric", "Value"])
+
+          for _, row in summary_df.iterrows():
+              ws.append([row["metric"], row["value"]])
+
+          wb.save(os.path.join(OUTPUT_DIR, "quality_summary.xlsx"))
+
+          doc = Document()
+          doc.add_heading("Software Quality Report", level=1)
+
+          doc.add_heading("1. Quality Summary", level=2)
+          table = doc.add_table(rows=1, cols=2)
+          table.style = "Table Grid"
+          table.rows[0].cells[0].text = "Metric"
+          table.rows[0].cells[1].text = "Value"
+
+          for _, row in summary_df.iterrows():
+              cells = table.add_row().cells
+              cells[0].text = str(row["metric"])
+              cells[1].text = str(row["value"])
+
+          doc.add_heading("2. Test Results", level=2)
+          doc.add_paragraph(f"Total Test Cases: {len(tests_df)}")
+
+          doc.add_heading("3. Coverage by File", level=2)
+          table = doc.add_table(rows=1, cols=2)
+          table.style = "Table Grid"
+          table.rows[0].cells[0].text = "Filename"
+          table.rows[0].cells[1].text = "Coverage (%)"
+
+          for _, row in coverage_df.iterrows():
+              cells = table.add_row().cells
+              cells[0].text = row["filename"]
+              cells[1].text = str(row["coverage_percent"])
+
+          doc.add_heading("4. Top 5 Lint Issues", level=2)
+          table = doc.add_table(rows=1, cols=3)
+          table.style = "Table Grid"
+          table.rows[0].cells[0].text = "Rank"
+          table.rows[0].cells[1].text = "Rule"
+          table.rows[0].cells[2].text = "Count"
+
+          for _, row in lint_top5_df.iterrows():
+              cells = table.add_row().cells
+              cells[0].text = str(row["rank"])
+              cells[1].text = row["rule"]
+              cells[2].text = str(row["count"])
+
+          doc.add_heading("5. Conclusion", level=2)
+          doc.add_paragraph(
+              "This report summarizes software quality metrics generated "
+              "from automated CI processes."
+          )
+
+          doc.save(os.path.join(OUTPUT_DIR, "quality_report.docx"))
+
+          print("Quality report generated successfully.")
+          EOF
+
+      - name: Run quality_report.py
+        run: python quality_report.py
+        
       - name: Upload result files
         uses: actions/upload-artifact@v4
         with:
@@ -26,5 +109,5 @@ jobs:
             pytest.xml
             coverage.xml
             ruff.json
-            out_csv/          
+            out_csv/
             out/  
