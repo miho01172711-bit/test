@@ -8,31 +8,23 @@ jobs:
     runs-on: ubuntu-latest 
     #runs-on: self-hosted 
     steps:  
-      - name: Checkout repository
-        uses: actions/checkout@v5
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.9'
           cache: 'pip'
-      - name: Install dependencies
-        run: pip install pytest pytest-cov coverage ruff openpyxl python-docx
-      - name: Run pytest
-        run: pytest -q --maxfail=1 --junitxml=pytest.xml --cov=. --cov-report=xml:coverage.xml
-      - name: Run ruff
-        run: ruff check . --output-format json > ruff.json || true
-      - name: Convert quality results to CSV
-        run: python quality_to_csv.py --junit pytest.xml --coverage coverage.xml --ruff ruff.json --outdir out_csv
-      - name: Generate quality report
-        run: /home/runner/work/test/test/python quality_report.py
+      - run: pip install pytest pytest-cov coverage ruff openpyxl python-docx
+      - run: pytest -q --maxfail=1 --junitxml=pytest.xml --cov=. --cov-report=xml:coverage.xml
+      - run: ruff check . --output-format json > ruff.json || true
+      - run: python quality_to_csv.py --junit pytest.xml --coverage coverage.xml --ruff ruff.json --outdir out_csv
+      - run: python quality_report.py
       - name: Upload result files
         uses: actions/upload-artifact@v4
         with:
-          name: ubuntu-results
+          name: ubuntu-results 
           path: |
             pytest.xml
             coverage.xml
             ruff.json
             out_csv/          
-            out/
-          
+            out/  
