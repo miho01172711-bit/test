@@ -17,7 +17,7 @@ jobs:
       - run: pytest -q --maxfail=1 --junitxml=pytest.xml --cov=. --cov-report=xml:coverage.xml
       - run: ruff check . --output-format json > ruff.json || true
       - run: python quality_to_csv.py --junit pytest.xml --coverage coverage.xml --ruff ruff.json --outdir out_csv
-      #- run: python quality_report.py
+      - run: python quality_report.py
       - name: Upload result files
         uses: actions/upload-artifact@v4
         with:
@@ -27,4 +27,11 @@ jobs:
             coverage.xml
             ruff.json
             out_csv/
+             ├- summary.csv
+             ├ tests.csv
+             ├- coverage_files.csv
+             ├─ lint.csv
+             └─ lint_top5.csv
             out/
+             ├─ quality_summary.xlsx
+             └─ quality_report.docx
