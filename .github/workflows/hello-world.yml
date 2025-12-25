@@ -24,7 +24,7 @@ jobs:
       - name: Convert quality results to CSV
         run: python quality_to_csv.py --junit pytest.xml --coverage coverage.xml --ruff ruff.json --outdir out_csv
       - name: Generate quality report
-        run: python quality_report.py
+        run: /home/runner/work/test/test/python quality_report.py
       - name: Upload result files
         uses: actions/upload-artifact@v4
         with:
